@@ -1,0 +1,38 @@
+html {
+    font-size: 10px;
+  }
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 100vw;
+  }
+.text {
+    font-size: 2rem;
+    font-family: Helvetica;
+    font-weight: 900;
+    text-align: center;
+    color: #f2f2f2;
+    background: url('https://res.cloudinary.com/shirlzzz9/image/upload/v1532785408/Misc/red-curtains-vector.svg');
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+}
+.text > p {
+    font-size: 2rem;
+}
+
+.albumArt {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+
+}
+.albumArt > img {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
