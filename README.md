@@ -1,0 +1,3 @@
+# Nackademin-JavaScript1
+A trial folder for now...
+Read Me message: read read read
