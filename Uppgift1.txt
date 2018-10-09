@@ -1,0 +1,77 @@
+1. På Wikipedia står det...
+(https://en.wikipedia.org/wiki/JavaScript)
+” JavaScript often abbreviated as JS, is a high-level, interpreted programming language”
+Vad innebär denna definition, förklara?
+Kort sagt, JavaScript är inte ett rent tolkat språk längre. Istället använder JavaScript s.k JVM(JavaScript Virtual Machine). Egentligen är språket 'compiled' men ser ut som 'source code'. En hög-nivå innebär att jämföra med C eller C++ behövs det inte göra bl.a att manuell fördelning av minne osv. Så är det lättare att köra med JavaScript.
+
+2. JavaScript använder ”dynamisk typning” (dynamic typing)
+Vad innebär det? Förklara och skriv några exempel.
+Det innebär att man kan ändra datatyp och värde när som helst i JS och köra koden utan fel.
+let a = 1;	//datatyp NUMBER
+    a = 'loose';	//datatyp STRING
+    a = true;	//datatype BOOLEAN
+
+3. Vad är console.log() och vad kan det användas till?
+Beskriv två andra användbara metoder som finns i console-objektet
+console.log() är metoden där man skriver ut ett värde i konsolen, tex ett meddelande eller ett nummer. Det kan också anvandas för att testa tex om event funkar:
+	function handleEnter() {
+  		console.log('It works!');
+	}
+console.clear() rensar de gamla kod i konsolen.
+console.table() visar resultat/data som "table".
+
+4. För variabler används begreppen deklarera (declare) och tilldela (assign).
+Vad innebär dessa?
+Det innebär att för att kunna använda variabler måste de initialiseras först dvs varje variabel skall ha ett namn och en värde. Tex
+	var shape = "square";
+I detta exempel är variabeln deklarade som "shape" och tilldelas "square" som värde.
+
+5. Vilka av följande variabelnamn är ogiltiga i JavaScript och varför?
+o 3D_Printer => ogiltig, variabelname kan inte borja med nummer
+o _private => giltig
+o $dollar => giltig
+o let => ogiltig, let är ett nyckelord/reserverad ord som går inte som variabelnamn
+o % => ogiltig, symbolen som inte är $ eller _
+o MAX-NUMBER => ogiltig, sybolen - kan inte användas i variabelnamn
+o firstName => bra namn med camelcase
+o middle-name => ogiltig, det går inte med -
+o last.name => ogiltig, det går inte med .
+
+6. Vad innebär null och undefined?
+Null innebär att variabeln har inget värde och reprenterar ingenting. Undefined är variabel som -har deklarerats men inte tilldelats ett värde.
+
+7. Vad är NaN?
+NaN(Not a Number) får man när man tex gör division med text eller en odefinierad variabel.
+	const x = "something";
+	console.log(10/x); //NaN
+
+	const y;
+	console.log(10/y); //NaN
+
+8. Vad används semikolon till? Är det obligatoriskt att använda ; i JavaScript?
+Semikonlon används till slutet av en satsning/tilldelning. Tex let a = 1; och console.log(a);
+Det kan utlämmnas tex console.log(a) och det funkar men det oftast anses "good practice" att skriva med ";".
+
+9. Vad är aritmetiska operatorer och hur kan de användas tillsammans med variabler?
+Aritmetiska operatorer tar numeriska värden som sina operander och returnerar ett numeriskt värde. Det finns bl.a addition(+), subtraction(-), multiplication(*), division(/), modulus(%), increment(++) och decrement(--). Exempel på att använda dem med variabel:
+	//addition och subtraction
+	console.log(4 + 8 - 15); //-3
+	//multiplication och division
+	console.log(2 * 6 / 3); //8
+	//mudulus
+	console.log(12 % 5); //2
+	//increment
+	let i = 3;
+	i++;		//4
+	//decrement
+	let j = 14;
+	j--;		//13
+
+
+10. Undersök följande kodsnutt
+let cars = new Array(2);
+cars[cars.length] = "Volvo";
+Hur många element rymmer arrayen cars?
+Vad innehåller arrayen exakt?
+
+3 element i arrayen och det visas [ <2 empty items>, 'Volvo' ] i konsolen. Det innebär att arrayen hade 2 tomma element i början och sen fick ett nytt värde som heter "Volvo" och då blir det 3 element i total i arrayen.
