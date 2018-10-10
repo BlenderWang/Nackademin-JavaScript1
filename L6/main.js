@@ -17,6 +17,7 @@ name('Rick', 'Sanchez');
 
 //Övning 1
 //a.
+/*
 function average(a, b) {
     return (a + b) / 2;
 }
@@ -49,15 +50,15 @@ function monthlyCost() {
     alert(`Your total cost of conversation is ${minPerMon * costPerMin}`);
 }
 monthlyCost();
-
+*/
 //Övning 4
-const priceWithTax = prompt('How much does this item cost you?');
-const taxRate = 0.3;
+const priceNow = prompt('How much does this item cost you?');
+const taxRate = parseInt(prompt('How much is your tax rate')) / 100;
 
 function calc() {
-    const tax = priceWithTax * taxRate;
-    const price = priceWithTax - tax;
-    alert(`This item costs excl. tax ${price} dollar.
+    const tax = taxRate + 1;
+    const priceOriginal = Math.round(priceNow / tax);
+    alert(`This item costs excl. tax ${priceOriginal} dollar.
 The tax for this item is ${tax} dollar.`);
     return;
 }
