@@ -1,0 +1,15 @@
+# Ignore file named `Uppgift*.js`
+Uppgift1.js
+Uppgift2.js
+
+#Ignore a pecific file
+Uppgift2.html
+
+#Ignore all .txt files
+*.txt
+
+#Ignore folder name `private`
+private/
+
+JavaScript-1-Uppgift-2.pdf
+Inlämningsuppgift1.odt
