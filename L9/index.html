@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lektion 9 Övning 4</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <style>
+        .html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .clock {
+            border: 1px solid brown;
+            width: 60vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .digits {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            margin: 1rem;
+            padding: 1rem;
+        }
+        .date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 50%;
+            height: 50px;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="digits hour"></div>
+            <div class="digits minute"></div>
+            <div class="digits second"></div>
+        </div>
+        <div class="date"></div>
+    </div>
+
+    <script>
+        const second = document.querySelector(".second");
+        const minute = document.querySelector(".minute");
+        const hour = document.querySelector(".hour");
+        const date = document.querySelector(".date");
+
+        function setDate() {
+            const now = new Date();
+
+            hour.innerHTML = now.getHours();
+            minute.innerHTML = now.getMinutes();
+            second.innerHTML = now.getSeconds();
+
+            date.innerHTML = now.toDateString();
+        }
+
+        setInterval(setDate, 1000);
+    </script>
+</body>
+
+</html>
