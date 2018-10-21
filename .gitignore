@@ -1,18 +1,16 @@
 # Ignore file named `Uppgift*.js`
 Uppgift1.js
-Uppgift2.js
 
 #Ignore a pecific file
-Uppgift2.html
+
 
 #Ignore all .txt files
 *.txt
 
 #Ignore folder name `private`
 private/
+Uppgifter
 
 Inlämningsuppgift1.odt
 package.json
 Inlämnigsuppgift2.pdf
-Inlämningsuppgift3.html
-Inlämningsuppgift3.js
