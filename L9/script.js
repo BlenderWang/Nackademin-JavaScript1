@@ -21,10 +21,13 @@ console.log(maxArray([4,6,78,95]));
 //Övning 1
 const today = new Date();
 const year = today.getFullYear();
-const month = today.getMonth() + 1; //+1 cozgetMonth() returns numbers 0 - 9
+let month = today.getMonth() + 1; //+1 coz getMonth() returns numbers 0 - 9
 const date = today.getDate();
 
-if(month < 10) return '0' + month;
+// if(month < 10) {
+    // month = '0' +  month.toString();
+    // return;
+// }
 console.log(`${year}-${month}-${date}`);
 
 //Övning2
@@ -45,7 +48,7 @@ console.log(`${d} den ${date} ${m} ${year}`);
 
 //Övning 5
 function distance(x1, x2, y1, y2) {
-   d = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+   const d = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
    return d;
 }
 
