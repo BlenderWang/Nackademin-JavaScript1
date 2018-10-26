@@ -35,7 +35,7 @@ const antal = [];
 while(true) {
     let tal = parseInt(prompt('Skriv gärna ett nummer:'));
 
-    if(tal === '' || tal === ' ') break;
+    if(tal === '' || tal === ' ') break;    //if tal is equal to an empty string or equals to a space
 
     if(isNaN(tal) === true) break;
 
