@@ -84,7 +84,7 @@
             }
             //if index in string is a letter aka if regex is true and if cap is set to true
             //what about öäå?
-            if(str[i].match(/[a-z]/i) && cap == true)  {
+            if(str[i].match(/[a-zåäö]/i) && cap == true)  {
                 cap = false; //if a letter is found after the dot set cap to false again
                 //str = str.replaceAt(i, str[i].toUpperCase());
                 //cut first part of string , add new letter , cut part after letter and replace old str
