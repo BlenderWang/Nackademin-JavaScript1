@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L13</title>
+</head>
+<body>
+    <!-- Övning 1 -->
+    <!-- onload="alert('Welcome!');" -->
+
+    <!-- Övning 2 -->
+    <!-- <button onclick="document.body.bgColor='red'">Red</button> -->
+    <button id="btn">Red</button>
+    <hr>
+
+    <!-- Övning 3 -->
+    <p id="demo"></p>
+    <!-- <button onclick="myFunction()">Click me</button> -->
+    <button id="btnClick">Click me</button>
+    <hr>
+
+    <!-- Övning 4 -->
+    <p id="demo2">Dölj texten genom att klicka nedan.</p>
+    <!-- <button onclick="document.getElementById('demo').style.display='none'">Dölj</button> -->
+    <button id="btnHide">Dölj</button>
+    <hr>
+
+    <!-- Övning 5 -->
+    <!-- <p onclick="this.style.display='none'">Dölj texten genom att klicka på här.</p> -->
+    <p id="hide">Dölj texten genom att klicka på här.</p>
+    <hr>
+
+    <!-- Övning 6 -->
+    <!-- <p onmousemove="this.style.color='green'">Peka här för att ändra färgen!</p> -->
+    <p class='green'>Peka här för att ändra färgen!</p>
+    <hr>
+
+    <!-- Övning 7 -->
+    <!-- <button onclick="getTime();">What time is it?</button> -->
+    <button id="timeBtn">What time is it?</button>
+    <h1 id="time"></h1>
+
+    <script>
+        //Övning 1 ersätta onload med event
+        function showMsg() {
+             alert('Welcome!');
+        }
+
+        //document.onload = showMsg();
+        window.addEventListener('load', showMsg);
+
+        //Övning 2 ersätt HTML kod med event listner
+        const btn = document.getElementById('btn');
+
+        function chgColor() {
+            document.body.bgColor = 'red';
+        }
+        btn.addEventListener('click', chgColor);
+
+        //Övning 3
+        function myFunction() {
+            document.getElementById('demo').innerHTML = 'Hello World';
+        }
+        const btnClick = document.getElementById('btnClick');
+        // btnClick.addEventListener('click', myFunction, false);
+        btnClick.onclick = myFunction;
+
+        //Övning 4
+        const btnHide = document.getElementById('btnHide');
+        function hideContent() {
+            document.getElementById('demo2').style.display = 'none';
+        }
+        btnHide.addEventListener('click', hideContent);
+
+        //Övning 5
+        const hide = document.querySelector('#hide');
+        function hideCont() {
+            hide.style.display = 'none';
+            console.log('bing');
+        }
+        hide.onclick = hideCont;
+
+        //Övning 6
+        const green = document.querySelector('.green');
+        function mouseOver() {
+            green.style.color = 'green';
+            // console.log("mouse is over");
+        }
+        green.addEventListener('mouseover', mouseOver);
+
+        //Övning 7
+        const timeBtn = document.getElementById('timeBtn');
+        function getTime() {
+            document.getElementById('time').innerHTML = new Date().toTimeString().substring(0, 8);
+        }
+        timeBtn.addEventListener('click', getTime);
+    </script>
+</body>
+</html>
