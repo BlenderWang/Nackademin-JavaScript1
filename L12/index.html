@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L12 Övningar</title>
+    <style>
+        .nice {color: green;}
+        .blue {color: blue;}
+    </style>
+</head>
+<body>
+    <h1 id='h'>Huvudrubrik</h1>
+    <br>
+
+    <h1>Aloha!</h1>
+    <h1>Aloha!</h1>
+    <h1>Aloha!</h1>
+    <br>
+
+    <p class="dot">Stycke 1</p>
+    <p class="dot">Stycke 2.</p>
+    <p class="dot">Stycke 3</p>
+    <br>
+
+    <p>Stycke 1.</p>
+    <p>stycke 2.</p>
+    <p>stycke 3.</p>
+    <br>
+
+    <p id='bigger' class="blue">första ordet i en ny mening. man sätter alltid stor bokstav på det första ordet i en ny mening. detta för att visa att en ny kommunikation startar.</p>
+
+    <script>
+        //change the h1 texts to uppercase
+        const h = document.getElementById('h');
+        // console.log(h.innerText.toUpperCase());
+        // h.textContent = h.innerText.toUpperCase();
+        h.innerHTML = h.innerHTML.toUpperCase();
+
+        //change the color of the first h1 title to 'green'
+        const h1 = document.getElementsByTagName('h1');
+        h1[1].className = 'nice';
+        console.log(h1[1]);
+
+        //add a period to the end if there isn't any
+        // const p = document.getElementsByTagName('p');
+        const p = document.getElementsByClassName('dot');
+        for(let i = 0; i < p.length; i++) {
+            let s = p[i].innerHTML;
+            if((s[s.length - 1]) !== '.') s += '.';
+            // console.log(s);
+            p[i].innerHTML = s;
+        }
+
+        //change the first letter to uppercase if not already
+        const p2 = document.querySelectorAll('p');
+
+        for(let i = 0; i < p2.length; i++){
+            let s = p2[i].innerHTML;
+            s = captalize(s);
+            // console.log(s);
+            p2[i].innerHTML = s;
+        }
+
+        function captalize(s) {
+            return s.charAt(0).toUpperCase() + s.substring(1);
+        }
+
+        //seperate a paragraph into sentences and each sentences start with a captal letter
+        /*String.prototype.replaceAt = function(index, newThing) {
+            return this.substr(0, index) + newThing + this.substr(index + newThing.length);
+        }*/
+        const texts = document.getElementById('bigger');
+        texts.style.fontSize = '2em';
+
+        let str = document.querySelector('.blue').innerHTML;
+        //const res = str.match(/[^\.!\?]+[\.!\?]+/g);
+
+        let cap = false; //using cap as a switch to decide when we upper case
+        for(let i = 0; i < str.length; i++) {
+            if(str[i] == ".") { // if a dot is found, upper case next letter
+                cap = true;
+            }
+            //if index in string is a letter aka if regex is true and if cap is set to true
+            //what about öäå?
+            if(str[i].match(/[a-z]/i) && cap == true)  {
+                cap = false; //if a letter is found after the dot set cap to false again
+                //str = str.replaceAt(i, str[i].toUpperCase());
+                //cut first part of string , add new letter , cut part after letter and replace old str
+                str = str.substr(0, i) + str[i].toUpperCase() + str.substr(i + str[i].length);
+            }
+        }
+        //output to document
+        console.log(str);
+        document.querySelector('.blue').innerHTML = str;
+    </script>
+</body>
+</html>
