@@ -41,7 +41,7 @@ while(true) {
 
     antal.push(tal);
 }
-
+console.log(antal);
 const min = Math.min.apply(null, antal);
 const max = Math.max.apply(null, antal);
 console.log(min + '\n' + max);
