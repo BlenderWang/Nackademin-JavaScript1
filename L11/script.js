@@ -36,14 +36,20 @@ while(true) {
     let tal = parseInt(prompt('Skriv gärna ett nummer:'));
 
     if(tal === '' || tal === ' ') break;    //if tal is equal to an empty string or equals to a space
-
+    if(tal < 0) {
+        alert('Invalid!');
+        break;
+    }
     if(isNaN(tal) === true) break;
 
     antal.push(tal);
 }
 console.log(antal);
-const min = Math.min.apply(null, antal);
-const max = Math.max.apply(null, antal);
+// const min = Math.min.apply(null, antal);
+// const max = Math.max.apply(null, antal);
+const max = Math.max(...antal);
+const min = Math.min(...antal);
+
 console.log(min + '\n' + max);
 
 //Övning 4
