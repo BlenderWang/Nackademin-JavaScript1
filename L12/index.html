@@ -79,6 +79,7 @@
 
         let cap = false; //using cap as a switch to decide when we upper case
         for(let i = 0; i < str.length; i++) {
+            if(i === 0) cap = true;
             if(str[i] == ".") { // if a dot is found, upper case next letter
                 cap = true;
             }
